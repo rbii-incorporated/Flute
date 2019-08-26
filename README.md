@@ -63,7 +63,8 @@ void main() {
 ```
 
 ## Test
-After running flute-setup, and writing integration tests navigate to the root of the flutter project.
+After running flute-setup and writing integration tests, navigate to the root of the flutter project.
+
 There drive your tests using:
 ```bash
 flute drive
