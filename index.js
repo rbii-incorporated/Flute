@@ -17,7 +17,8 @@ module.exports = () => {
             break;
     
         default:
-            console.error(`\n"${cmd}" is not a valid command. `);
+            const error = require('./cmds/error')
+            error(`\n"${cmd}" is not a valid command.\n`, true)
             require('./cmds/help')();
             break;
     }

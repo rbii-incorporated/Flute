@@ -19,7 +19,7 @@ First add a key to some widget.
 Text(headerText, key: Key("categoryLabel"), style: Theme.of(context).textTheme.display1)
 ```
 
-Then reference that widget after using the driver to query state. Finally assert tests using expect. 
+Then reference that widget, use the driver to query state. Finally assert tests using expect. 
 ```dart
 import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
