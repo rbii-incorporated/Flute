@@ -1,6 +1,6 @@
 {
   "name": "flute-test",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "description": "An easy way to add and run integration tests with Flutter projects.",
   "homepage": "https://github.com/rbii-incorporated/Flute/blob/master/README.md",
   "repository": {
@@ -11,10 +11,15 @@
     "node": ">=8"
   },
   "keywords": [
-    "Flutter",
-    "Integration",
-    "Test",
-    "flute"
+    "flutter",
+    "integration",
+    "test",
+    "driver",
+    "simulator",
+    "emulator",
+    "flute",
+    "iOS",
+    "Android"
   ],
   "preferGlobal": true,
   "license": "MIT",

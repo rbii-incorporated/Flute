@@ -78,7 +78,7 @@ module.exports = async (path) => {
         });
 
 
-        var driverContent = "import 'package:flutter_driver/flutter_driver.dart';\nimport 'package:test/test.dart';\n\nvoid main() {\n\n   group('Integration Tests:', () {\n      FlutterDriver driver;\n      setUpAll(() async => driver = await FlutterDriver.connect());\n      tearDownAll(() async => driver?.close());\n\n\n      test('Open Menu', () async {\n         // This is an example that uses a widget key to figure out if the menu has opened.\n         //final navLabel = find.byValueKey('leadingNav');\n         //final navText = await driver.getText(navLabel);\n         //expect(navText, 'Menu');\n      });\n\n\n   });\n\n}";
+        var driverContent = "import 'package:flutter_driver/flutter_driver.dart';\nimport 'package:test/test.dart';\n\nvoid main() {\n\n    FlutterDriver driver;\n\n    setUpAll(() async => driver = await FlutterDriver.connect());\n\n    tearDownAll(() async => driver?.close());\n\n   group('Welcome:', () {\n\n      test('Open Menu', () async {\n         // This is an example that uses a widget key to figure out if the menu has opened.\n         //final navLabel = find.byValueKey('leadingNav');\n         //final navText = await driver.getText(navLabel);\n         //expect(navText, 'Menu');\n      });\n\n\n   });\n\n}";
 
         fs.writeFile(driverDir + "/app_test.dart", driverContent, function (err) {
             if (err) {

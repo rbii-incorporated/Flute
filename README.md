@@ -12,27 +12,28 @@ flute setup
 ```
 
 ## Write
-Inside test_driver/app_test.dart exists a scaffold for writing integration tests. There one can add functionality to the session.
+Inside test_driver/app_test.dart exists a scaffold for writing integration tests. Here craft a route for the driver. Add expectations to the program as fit. 
 
-First add a key to some widget.
+Add a key to some widget. Then it can be indexed in the tree for testing.
 ```dart
 Text(headerText, key: Key("categoryLabel"), style: Theme.of(context).textTheme.display1)
 ```
 
-Then reference that widget, use the driver to query state. Finally assert tests using expect. 
+Reference that widget, use the driver to query state. Finally assert state using expect. 
+The order of tests is relevant to expectations, test-a will drive state into test-b and test-a,test-b into test-c.
 ```dart
 import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
 
 void main() {
 
+  FlutterDriver driver;
+
+  setUpAll(() async => driver = await FlutterDriver.connect());
+
+  tearDownAll(() async => driver?.close());
+
   group('View Submenus:', () {
-
-    FlutterDriver driver;
-
-    setUpAll(() async => driver = await FlutterDriver.connect());
-
-    tearDownAll(() async => driver?.close());
 
     test('Open Menu', () async {
       final navLabel = find.byValueKey("leadingNav");
@@ -40,7 +41,7 @@ void main() {
       expect(navText, "Menu");
       final titleLabel = find.byValueKey("titleLabel");
       final titleText = await driver.getText(titleLabel);
-      expect(titleText, "Jacob's Restaurant");
+      expect(titleText, "Restaurant");
     });
 
     test('Show Appetizers', () async {
@@ -62,8 +63,8 @@ void main() {
 ```
 
 ## Test
-From the root of a flutter project, one can drive integration testing.
-
+After running flute-setup, and writing integration tests navigate to the root of the flutter project.
+There drive your tests using:
 ```bash
 flute drive
 ```
