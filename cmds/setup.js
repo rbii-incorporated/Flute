@@ -2,8 +2,6 @@ module.exports = async (path) => {
 
     fs = require('fs');
 
-    const readline = require('readline');
-
     var filePath = process.cwd();
 
     var yamlPath = filePath + "/pubspec.yaml";

@@ -1,6 +1,6 @@
 {
   "name": "flute-test",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "description": "An easy way to add and run integration tests with Flutter projects.",
   "homepage": "https://github.com/rbii-incorporated/Flute/blob/master/README.md",
   "repository": {
